@@ -52,24 +52,24 @@ export class HomeComponent implements OnInit {
 
 
   listamultiplos (numero: number) {
-    console.log(`listamultiplos${numero}`);
+    
     this.arryMultiplos = [];
     
     for (let index = 1; index <= numero; index++) {
   
       if ( index == numero){
-        console.log(index);
+      
         
        if (this.multiplosArrays(index, 3) && this.multiplosArrays(index, 5) && this.multiplosArrays(index, 7)) {
-         console.log('soy multiplo de 3 ,5 7 ', index);
+         
          this.arryMultiplos.push(3,5,7);
         
         }else if (this.multiplosArrays(index, 3) && this.multiplosArrays(index, 5)){
  
-          console.log('soy multiplo de 3 ,5 ', index);
+         
           this.arryMultiplos.push(3,5,);
         }else if (this.multiplosArrays(index, 3) && this.multiplosArrays(index, 7)){
-          console.log('soy multiplo de 3 ,7 ', index);
+          
           this.arryMultiplos.push(3,7,);
         }else if (this.multiplosArrays(index, 3)){
          this.arryMultiplos.push(3);
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit {
       }
     })
 
-    console.log(this.arrayMultiplosEnd);
+  
     
   
 }
