@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row justify-content-center">
+      <h1>Multiplos entre  0 y tu numero </h1>
+     
+      <div class="col-12">
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" 
+              type="text" placeholder="Buscar multiplos" 
+              aria-label="Search" 
+              (keyup.enter)="multiplos(buscarTexto.value)" 
+              #buscarTexto />
+              <button (click)="multiplos(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">
+                enviar
+            </button>
+          </form>
+
+          <div>
+              <h2>multiplos </h2>
+              <ul class="list-group">
+                    <li  class="list-group-item list-group-item-success" *ngFor="let numero of arrayMultiplosEnd; index as i; first as isFirst">
+                            {{numero}} <span *ngIf="isFirst"></span>
+                         </li>
+              </ul>
+            
+          </div>
+          <div>
+              <h2>multiplos de 3</h2>
+              <ul class="list-group">
+                    <li  class="list-group-item list-group-item-success" *ngFor="let numero of multiplosDeTres; index as i; first as isFirst">
+                            {{numero}} <span *ngIf="isFirst"></span>
+                         </li>
+              </ul>
+            
+          </div>
+          
+          <div>
+              <h2>Multiplos de 5 </h2>
+              <ul class="list-group">
+                  <li class="list-group-item list-group-item-danger" *ngFor="let numero of multiplosDeCinco; index as i; first as isFirst">
+                      {{numero}} <span *ngIf="isFirst"></span>
+                  </li>
+              </ul>
+          </div>
+          <div>
+              <h2>Multiplos de 7 </h2>
+              <ul class="list-group">
+                  <li class="list-group-item list-group-item-primary" *ngFor="let numero of multiplosDeSiete; index as i; first as isFirst">
+                      {{numero}} <span *ngIf="isFirst"></span>
+                    </li>
+              </ul>
+              
+          </div>
+      </div>
+      
+      
+  </div>
+</div>
+
