@@ -22,9 +22,14 @@ export class HomeComponent implements OnInit {
   multiplosDeCinco: any[] = [];
   multiplosDeSiete: any[] = [];
   
-  isMultiplo : boolean = false
+  isMultiploDeTres : boolean = false;
+  isMultiploDeCinco: boolean = false;
+  isMultiploDeSiete: boolean = false;
+
   arryMultiplos: any[] = [];
   arrayMultiplosEnd: any[] = [];
+
+
 
 
   constructor(private quoteService: QuoteService) { }
@@ -79,7 +84,7 @@ export class HomeComponent implements OnInit {
           this.arryMultiplos.push(7);
         }
       }
-       
+       this.checkMinMultiplos(this.arryMultiplos);
       
    }
  
@@ -97,6 +102,7 @@ export class HomeComponent implements OnInit {
         myObj[el] = true
         this.arrayMultiplosEnd.push(el)
       }
+      
     })
 
   
@@ -109,10 +115,9 @@ export class HomeComponent implements OnInit {
     this.multiplosDeTres = [];
     this.multiplosDeCinco = [];
     this.multiplosDeSiete = [];
-    // let value: any;
-     crearRegistro({
-       value: numero
-      });
+    crearRegistro({
+      value: numero
+     });
     for(let i=1;i<=numero;i++){
 
         if (i % 3 == 0 && i<=numero ){
@@ -137,6 +142,22 @@ export class HomeComponent implements OnInit {
    
   }
   
+  checkMinMultiplos ( arreglo: any [] ){
+    console.log(arreglo);
+    
+    if(arreglo[0] == 3){
+      this.isMultiploDeTres = true;
+      console.log('el menor es 3 ');
+      
+      
+    }else if(arreglo[0] == 5){
+      this.isMultiploDeCinco = true;
+      console.log('el menor es 5 ');
+    }else{
+      this.isMultiploDeSiete = true;
+      console.log('el menor es 7 ');
+    }
+  }
  
 
   
